@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+    frontend:
+        image: pwn01_frontend
+        ports:
+            - "31337:31337"
+            - "80:80"
+        networks:
+            - default
+        volumes:
+            - ./flag:/flag:ro
+        depends_on:
+            - backend
+
+    backend:
+        image: pwn01_backend
+        volumes:
+            - ./.env:/.env:ro
+        networks:
+            - default
+            - internal
+        depends_on:
+            - db
+
+    db:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD : 12345678 # change it
+            MYSQL_DATABASE: service
+            MYSQL_USER: user
+            MYSQL_PASSWORD: 12345678 # change it
+        volumes:
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+        networks:
+            - internal
+
+networks:
+    default:
+    internal:
+        internal: true

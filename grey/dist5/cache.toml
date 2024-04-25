@@ -1,0 +1,3 @@
+[cache]
+enabled = false
+directory = "/home/w1n_gl0ry/CTF/Pwnable/2024/grey/dist4/distribution"

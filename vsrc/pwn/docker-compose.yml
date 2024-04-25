@@ -1,0 +1,11 @@
+services:
+  calc:
+    build: .
+    container_name: calc
+    tty: true
+    ports:
+      - "20000:20000"
+    restart: always
+
+    volumes:
+      - ./src:/root/

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+mount -t proc none /proc
+mount -t sysfs none /sys
+mdev -s
+
+chmod 666 /dev/cpu/0/msr
+
+cat <<EOF
+Boot took $(cut -d' ' -f1 /proc/uptime) seconds
+EOF
+
+setsid cttyhack setuidgid 0 /bin/sh
+
+reboot -f

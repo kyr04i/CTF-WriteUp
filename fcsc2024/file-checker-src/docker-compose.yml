@@ -1,0 +1,8 @@
+services:
+  file-checker:
+    build: .
+    ports:
+      - "4000:4000" 
+    volumes:
+      # This is important: do not remove
+      - ./libc-2.39.so:/lib/x86_64-linux-gnu/libc.so.6:ro

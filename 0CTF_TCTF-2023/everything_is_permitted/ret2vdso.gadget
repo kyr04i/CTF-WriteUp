@@ -1,0 +1,21 @@
+Gadgets information
+============================================================
+0x0000000000401015 : add al, 0 ; add byte ptr [rdi], cl ; add eax, 0x8c48348 ; ret
+0x0000000000401016 : add byte ptr [rax], al ; syscall
+0x0000000000401027 : add byte ptr [rax], al ; xor rdi, rdi ; syscall
+0x0000000000401017 : add byte ptr [rdi], cl ; add eax, 0x8c48348 ; ret
+0x0000000000401019 : add eax, 0x8c48348 ; ret
+0x000000000040101b : add esp, 8 ; ret
+0x000000000040101a : add rsp, 8 ; ret
+0x0000000000401025 : cmp al, 0 ; add byte ptr [rax], al ; xor rdi, rdi ; syscall
+0x0000000000401000 : jmp 0x40101f
+0x0000000000401024 : mov eax, 0x3c ; xor rdi, rdi ; syscall
+0x0000000000401013 : mov edx, 0x400 ; syscall
+0x0000000000401011 : mov esi, esp ; mov edx, 0x400 ; syscall
+0x0000000000401010 : mov rsi, rsp ; mov edx, 0x400 ; syscall
+0x000000000040101e : ret
+0x0000000000401018 : syscall
+0x000000000040102a : xor edi, edi ; syscall
+0x0000000000401029 : xor rdi, rdi ; syscall
+
+Unique gadgets found: 17

@@ -1,0 +1,5 @@
+NAME=Buildroot
+VERSION=-g1c62ffd-dirty
+ID=buildroot
+VERSION_ID=2024.05-git
+PRETTY_NAME="Buildroot 2024.05-git"

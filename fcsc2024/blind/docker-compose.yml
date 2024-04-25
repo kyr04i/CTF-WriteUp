@@ -1,0 +1,10 @@
+services:
+  blind-attack:
+    image: anssi/fcsc2024-pwn-blind-attack:latest
+    ports:
+      - "4000:4000"
+
+  shovel:
+    image: anssi/fcsc2024-pwn-blind-attack-shovel:latest
+    ports:
+      - "8000:8000"

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Script name: S99start
+
+start() {
+    echo 2 > /proc/sys/kernel/randomize_va_space
+    echo 10 > /proc/sys/vm/mmap_rnd_bits
+    chmod 0444 /flag
+    passwd -l root
+    
+    mkdir -p /tmp/sockets
+    chmod 0333  /tmp/sockets
+
+    [ -x /start.sh ] || chmod +x /start.sh
+
+    su -s /bin/sh -c 'cd / && exec /start.sh &' ctf
+}
+
+stop() {
+    echo ""
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart|reload)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|reload}"
+        exit 1
+esac
+
+exit $?

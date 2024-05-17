@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  heaping0:
+    build: .
+    restart: unless-stopped
+    network_mode: host
+    user: 1000:1000
